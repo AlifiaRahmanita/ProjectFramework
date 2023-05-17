@@ -21,9 +21,9 @@ app.use("/assets", express.static(__dirname + "/public"));
 
 // Konfigurasi koneksi ke database
 const conn = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "",
+  host: "sql12.freesqldatabase.com",
+  user: "sql12618907",
+  password: "dT3KZwanuu",
   database: "db_lingkom2",
 });
 
@@ -51,7 +51,7 @@ app.get("/", (req, res) => {
       let saldo =
         resultKasMasuk[0].totalKasMasuk - resultKasKeluar[0].totalKasKeluar;
 
-      res.render("dashboard", {
+      res.render("index", {
         kasMasuk: resultKasMasuk[0].totalKasMasuk,
         kasKeluar: resultKasKeluar[0].totalKasKeluar,
         saldo: saldo,
