@@ -21,10 +21,10 @@ app.use("/assets", express.static(__dirname + "/public"));
 
 // Konfigurasi koneksi ke database
 const conn = mysql.createConnection({
-  host: "sql12.freesqldatabase.com",
-  user: "sql12618907",
-  password: "dT3KZwanuu",
-  database: "db_lingkom2",
+  host: "localhost",
+  user: "root",
+  password: "",
+  database: "db_lingkom",
 });
 
 // Membuka koneksi ke database
@@ -51,7 +51,7 @@ app.get("/", (req, res) => {
       let saldo =
         resultKasMasuk[0].totalKasMasuk - resultKasKeluar[0].totalKasKeluar;
 
-      res.render("index", {
+      res.render("dashboard", {
         kasMasuk: resultKasMasuk[0].totalKasMasuk,
         kasKeluar: resultKasKeluar[0].totalKasKeluar,
         saldo: saldo,
@@ -100,5 +100,5 @@ app.delete("/delete/:id", (req, res) => {
 
 // Menjalankan server
 app.listen(port, () => {
-  console.log(`Server berjalan pada port ${port}`);
+  console.log(`Server berjalan pada port ${port}`);
 });
