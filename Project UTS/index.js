@@ -51,7 +51,7 @@ app.get("/", (req, res) => {
       let saldo =
         resultKasMasuk[0].totalKasMasuk - resultKasKeluar[0].totalKasKeluar;
 
-      res.render("dashboard", {
+      res.render("index", {
         kasMasuk: resultKasMasuk[0].totalKasMasuk,
         kasKeluar: resultKasKeluar[0].totalKasKeluar,
         saldo: saldo,
