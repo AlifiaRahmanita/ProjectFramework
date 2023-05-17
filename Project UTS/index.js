@@ -21,9 +21,9 @@ app.use("/assets", express.static(__dirname + "/public"));
 
 // Konfigurasi koneksi ke database
 const conn = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "",
+  host: "sql12.freesqldatabase.com",
+  user: "sql12618907",
+  password: "dT3KZwanuu",
   database: "db_lingkom2",
 });
 
